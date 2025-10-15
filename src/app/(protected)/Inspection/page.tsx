@@ -150,7 +150,7 @@ export default function InspectionPage() {
   const [selectedInspection, setSelectedInspection] = useState<string | null>(
     null
   );
-  const [result, setResult] = useState<any>({});
+  const [result, setResult] = useState({});
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -289,7 +289,7 @@ export default function InspectionPage() {
                       Camera preview will appear here
                     </p>
                     <p className="text-xs text-gray-500">
-                      Click "Activate Camera" to start
+                      {"Click Activate Camera to start"}
                     </p>
                   </div>
                 )}

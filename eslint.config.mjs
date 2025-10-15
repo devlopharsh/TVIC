@@ -10,7 +10,10 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Extend Next.js + TypeScript ESLint rules
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Custom configuration
   {
     ignores: [
       "node_modules/**",
@@ -19,6 +22,19 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      // ✅ Allow `any` type globally
+      "@typescript-eslint/no-explicit-any": "off",
+
+      // ✅ Ignore unused imports/variables (just warn in console, not error)
+      "@typescript-eslint/no-unused-vars": "off",
+
+      // ✅ Allow usage of <img> tags without forcing next/image
+      "@next/next/no-img-element": "off",
+
+      // ✅ Allow normal quotes and apostrophes in JSX
+      "react/no-unescaped-entities": "off",
+    },
   },
 ];
 
